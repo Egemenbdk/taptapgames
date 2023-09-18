@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.container');
 
-    // Example data for games (you can replace this with your own data)
+    // Example data for games (you can repslace this with your own data)
     const gamesData = [
         {
             title: 'Football Legends',
