@@ -1,41 +1,3 @@
-/* Updated CSS for the scrollable container */
-.scrollable-container {
-    height: auto; /* Allow the container to expand based on its content */
-    overflow-y: auto; /* Enable vertical scrolling and show scrollbar only when needed */
-    overflow-x: hidden; /* Hide horizontal scrollbar if it's not needed */
-}
-
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Set background image for the body */
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('background.jpg'); /* Replace 'background.jpg' with your image URL */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent background to the container */
-}
-
-/* Header styles */
-header {
-    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background color for better readability */
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
   /* latin-ext */
   @font-face {
     font-family: 'Fredoka One';
@@ -56,6 +18,70 @@ header {
     src: url(https://fonts.gstatic.com/s/fredoka/v14/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3OFiX8EemK.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
+
+/* Updated CSS for the scrollable container */
+.scrollable-container {
+    width: 100%;
+    height: calc(100% - 103px); /* Adjust the height based on your header's height */
+    position: absolute;
+    top: 103px; /* Adjust based on your header's height */
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* Style the scrollbar thumb */
+.scrollable-container::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px; /* Optional: Round the scrollbar thumb */
+}
+
+/* Style the scrollbar track */
+.scrollable-container::-webkit-scrollbar-track {
+    background-color: #6E6E6E;
+}
+
+/* Optionally, you can style the scrollbar itself */
+.scrollable-container::-webkit-scrollbar {
+    width: 10px; /* Adjust the width as needed */
+}
+
+/* Add this CSS for the image scaling effect */
+.game-image:hover {
+    transform: scale(1.1); /* Increase the image size by 5% on hover */
+    transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set background image for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #6e6e6e; /* Really dark gray background for the game container */
+}
+
+/* Header styles */
+header {
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background color for better readability */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
 
 header h1 {
     font-size: 34px;
@@ -91,7 +117,7 @@ nav a {
     margin: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
-    overflow: auto;
+    overflow: hidden;
     width: 48%; /* Set the width to 48% to allow two games per row */
     display: inline-block; /* Add this to make games appear side by side */
 }
@@ -101,6 +127,7 @@ nav a {
     width: 100%; /* Make the image cover the entire left half of the button */
     height: auto; /* Automatically adjust the height to maintain aspect ratio */
     padding-bottom: 33.33%; /* Maintain the 3:2 aspect ratio (adjust as needed) */
+    transition: transform 0.2s ease-in-out;
 }
 
 .game-title {
@@ -113,7 +140,7 @@ nav a {
     text-align: center;
     padding: 5px;
     font-size: 18px;
-    font-weight: bold;
+    font-family: 'Fredoka One'; /* Use the custom font family */
 }
 
 /* Adjust the size of the button text */
@@ -129,52 +156,12 @@ footer {
     text-align: center;
 }
 
-/* Add your existing styles here */
-
 /* Darker background for the whole website */
 body {
     background-color: #6e6e6e; /* Really dark gray background for the game container */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    overflow: auto; /* Hide overflow to crop the container */
+    overflow: hidden; /* Hide overflow to crop the container */
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
-
-/* Game container styling */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    background-color: #6e6e6e; /* Really dark gray background for the game container */
-    position: relative; /* Add this for button positioning */
-}
-
-/* Embedded game iframe */
-.container iframe {
-    border: none; /* Remove border to maximize the game */
-    width: 100%; /* Maximize the game width */
-    height: 100%; /* Maximize the game height */
-}
-
-/* Fullscreen button styling */
-#fullscreen-button {
-    position: ri;
-    top: 20px; /* Move the button away from the top */
-    right: 20px; /* Move the button away from the right */
-    width: 50px; /* Set the width of the button */
-    height: 50px; /* Set the height of the button */
-    background-image: url('https://i.ibb.co/3NBN0J7/image.png'); /* Use your image */
-    background-size: cover; /* Resize the image to fit the button */
-    background-repeat: no-repeat;
-    background-color: transparent; /* Remove any background color */
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    text-indent: -9999px; /* Hide text */
-    z-index: 2; /* Ensure the button is above the iframe */
-}
 
