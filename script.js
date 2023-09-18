@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
             url: 'football-legends/index.html', // Add game URL here
         },
         {
-            title: 'Penalty Kick Online',
-            imageUrl: 'https://www.coolmathgames.com/sites/default/files/PenaltyKickOnline_OG-logo.jpg',
-            url: 'penalty-kick-online/index.html', // Add game URL here
+            title: 'House Escape',
+            imageUrl: 'https://i.ytimg.com/vi/gB0cHTDKYAw/sddefault.jpg',
+            url: 'house-escape/index.html', // Add game URL here
         },
         {
             title: 'Retro Bowl',
