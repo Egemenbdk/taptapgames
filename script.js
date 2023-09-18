@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
             url: 'fireboy-and-watergirl/index.html', // Add game URL here
         },
         {
+            title: 'Jacksmith',
+            imageUrl: 'https://i.ibb.co/X7N1YGj/IMG-5236.jpg',
+            url: 'jacksmith/index.html', // Add game URL here
+        },
+        {
             title: 'Basketball Stars',
             imageUrl: 'https://images.crazygames.com/games/basketball-stars-2019/cover-1583231506155.png?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop',
             url: 'basketball-stars/index.html', // Add game URL here
