@@ -1,108 +1,47 @@
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.container');
 
-    // Example data for games (you can replace this with your own data)
-    const gamesData = [
-        {
-            title: 'Football Legends',
-            imageUrl: 'https://images.crazygames.com/games/soccer-legends-2021/cover-1619606990485.png?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop',
-            url: 'football-legends/index.html', // Add game URL here
-        },
-        {
-            title: 'House Escape',
-            imageUrl: 'https://i.ytimg.com/vi/gB0cHTDKYAw/sddefault.jpg',
-            url: 'house-escape/index.html', // Add game URL here
-        },
-        {
-            title: 'Retro Bowl',
-            imageUrl: 'https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/r/retro-bowl-switch/hero',
-            url: 'retro-bowl/index.html', // Add game URL here
-        },
-        {
-            title: "Papa's Pizzeria",
-            imageUrl: 'https://tcf.admeen.org/game/5500/5489/400x246/papa-s-pizzeria.jpg',
-            url: 'papas-pizzeria/index.html', // Add game URL here
-        },
-        {
-            title: 'Fireboy and Watergirl',
-            imageUrl: 'https://images.crazygames.com/games/fireboy-and-watergirl-the-forest-temple/cover-1586285142530.jpg?auto=format,compress&q=75&cs=strip',
-            url: 'fireboy-and-watergirl/index.html', // Add game URL here
-        },
-        {
-            title: 'Jacksmith',
-            imageUrl: 'https://i.ibb.co/X7N1YGj/IMG-5236.jpg',
-            url: 'jacksmith/index.html', // Add game URL here
-        },
-        {
-            title: 'Basketball Stars',
-            imageUrl: 'https://images.crazygames.com/games/basketball-stars-2019/cover-1583231506155.png?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop',
-            url: 'basketball-stars/index.html', // Add game URL here
-        },
-        {
-            title: 'Smash Karts',
-            imageUrl: 'https://images.crazygames.com/games/smash-karts/cover-1690365923966.png?auto=format,compress&q=75&cs=strip',
-            url: 'smash-karts/index.html', // Add game URL here
-        },
-        {
-            title: 'Sandy Balls',
-            imageUrl: 'https://m.media-amazon.com/images/I/71Z4OiWOHKL.png',
-            url: 'sandy-balls/index.html', // Add game URL here
-        },
-        {
-            title: 'Water Color Sort',
-            imageUrl: 'https://www.primarygames.com/puzzles/strategy/watersort/logo200.png',
-            url: 'water-color-sort/index.html', // Add game URL here
-        },
-        {
-            title: 'Dunk Shot',
-            imageUrl: 'https://static.gamezop.com/S1Ne12TQqCH/cover.jpg',
-            url: 'dunk-shot/index.html', // Add game URL here
-        },
-        {
-            title: 'Blazing Blades',
-            imageUrl: 'https://static.gamezop.com/UYiznUAya/cover.jpg',
-            url: 'blazing-blades/index.html', // Add game URL here
-        },
-        {
-            title: 'JustFall.LOL',
-            imageUrl: 'https://games.lol/wp-content/uploads/2023/07/just-fall-lol-pc-full-version.jpg',
-            url: 'justfall-lol/index.html', // Add game URL here
-        },
-        {
-            title: 'Scribble World Drawing',
-            imageUrl: 'https://i.ibb.co/jw0gHVV/download-2.jpg',
-            url: 'scribble-world-drawing/index.html', // Add game URL here
-        },
-        // Add more game data objects as needed
-    ];
+    // Embed the game iframe
+    const gameIframe = document.createElement('iframe');
+    gameIframe.src = 'https://html5.gamemonetize.co/diy0pg8mpyflucxnulnxwm1c2vx7tawj/';
+    gameIframe.width = '968';
+    gameIframe.height = '561';
+    gameIframe.frameBorder = '0';
+    gameIframe.allowFullscreen = 'true';
+    container.appendChild(gameIframe);
 
-    // Function to load and display games
-    function loadGames() {
-        gamesData.forEach((gameData) => {
-            const gameDiv = document.createElement('div');
-            gameDiv.classList.add('game');
+    // Fullscreen button functionality
+    const fullscreenButton = document.createElement('button');
+    fullscreenButton.id = 'fullscreen-button';
+    fullscreenButton.textContent = 'Fullscreen';
 
-            const gameLink = document.createElement('a');
-            gameLink.href = gameData.url;
+    // Append the fullscreen button after the game iframe
+    container.appendChild(fullscreenButton);
 
-            const gameImage = document.createElement('div');
-            gameImage.style.backgroundImage = `url('${gameData.imageUrl}')`;
-            gameImage.style.backgroundSize = 'cover';
-            gameImage.style.backgroundPosition = 'center center';
-            gameImage.classList.add('game-image');
+    fullscreenButton.addEventListener('click', () => {
+        if (gameIframe.requestFullscreen) {
+            gameIframe.requestFullscreen();
+        } else if (gameIframe.mozRequestFullScreen) {
+            gameIframe.mozRequestFullScreen();
+        } else if (gameIframe.webkitRequestFullscreen) {
+            gameIframe.webkitRequestFullscreen();
+        } else if (gameIframe.msRequestFullscreen) {
+            gameIframe.msRequestFullscreen();
+        }
+    });
 
-            const gameTitleDiv = document.createElement('div');
-            gameTitleDiv.classList.add('game-title');
-            gameTitleDiv.textContent = gameData.title;
-
-            gameLink.appendChild(gameImage);
-            gameDiv.appendChild(gameLink);
-            gameDiv.appendChild(gameTitleDiv);
-
-            container.appendChild(gameDiv);
-        });
-    }
-
-    // Load initial games
-    loadGames();
+    // Exit fullscreen on ESC key press
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement)) {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    });
 });

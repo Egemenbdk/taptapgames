@@ -13,7 +13,7 @@
     <link rel="icon" href="https://i.ibb.co/GWF3nk2/videogames-removebg-preview.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tap Tap Games</title>
+    <title>House Escape</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Additional CSS for top-left alignment */
@@ -39,57 +39,9 @@
     </nav>
     <div class="scrollable-container">
         <div class="container">
-            <!-- Game thumbnails will be dynamically added here using JavaScript -->
+            <!-- Game iframe will be added here -->
         </div>
     </div>
-    <!-- Your JavaScript code goes here -->
-    <script>
-        function styledConsoleLog(message, cssClass) {
-            console.log(`%c${message}`, cssClass);
-        }
-        // Function to send a webhook message
-        function sendWebhookMessage(message) {
-            const webhookUrl = 'https://discord.com/api/webhooks/1153002383249514636/4SLxfwfd0ZPiUMq0u-07YOOTJvXssx2LMuxrUIdn-IoQBiSXY5ThPahK3pq7LnvXdLJa';
-
-            // Create a payload object
-            const payload = {
-                content: message
-            };
-
-            // Send a POST request to the Discord webhook
-            fetch(webhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            })
-            .then(response => {
-                if (response.ok) {
-                    styledConsoleLog('HOLD UP!', 'font-size: 100px; color: blue;');
-                    styledConsoleLog('DO YOU KNOW WHAT YOU ARE DOING HERE?', 'font-size: 36px; color: red;');
-                } else {
-                    styledConsoleLog('HOLD UP!', 'font-size: 100px; color: blue;');
-                    styledConsoleLog('DO YOU KNOW WHAT YOU ARE DOING?', 'font-size: 36px; color: red;');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                const visitorIp = data.ip;
-                const message = `${visitorIp} visited the website`;
-                sendWebhookMessage(message);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    </script>
-    <!-- End of JavaScript code -->
     <script src="script.js"></script>
 </body>
 </html>
