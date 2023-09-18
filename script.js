@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: 'House Escape',
             imageUrl: 'https://i.ytimg.com/vi/gB0cHTDKYAw/sddefault.jpg',
-            url: 'house-escape/index.html', // Add game URL here
+            url: 'chica-house-escape/index.html', // Add game URL here
         },
         {
             title: 'Retro Bowl',
