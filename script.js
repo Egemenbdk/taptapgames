@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
             url: 'fireboy-and-watergirl', // Add game URL here
         },
         {
-            title: 'Jacksmith',
-            imageUrl: 'https://i.ibb.co/X7N1YGj/IMG-5236.jpg',
+            title: 'Extreme Pamplona',
+            imageUrl: 'https://images.crazygames.com/games/extreme-pamplona/cover-1679593145021.png',
             url: 'jacksmith', // Add game URL here
         },
         {
