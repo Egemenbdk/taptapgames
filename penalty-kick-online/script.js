@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Embed the game iframe
     const gameIframe = document.createElement('iframe');
-    gameIframe.src = 'https://rawcdn.githack.com/PenaltyKickOnline/PenaltyKickOnline.github.io/f432955990ac6493d47a17a9e56fbc3e7483713a/index.html';
+    gameIframe.src = 'https://ehmorris.com/lander/';
     gameIframe.width = '968';
     gameIframe.height = '561';
     gameIframe.frameBorder = '0';
