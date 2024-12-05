@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
             url: 'football-legends', // Add game URL here
         },
         {
-            title: 'House Escape',
-            imageUrl: 'https://i.ytimg.com/vi/gB0cHTDKYAw/sddefault.jpg',
-            url: 'chica-house-escape', // Add game URL here
+            title: 'Tag',
+            imageUrl: 'https://images.crazygames.com/tag-2-3-4-players_16x9/20240403022813/tag-2-3-4-players_16x9-cover?auto=format,compress&q=75&cs=strip',
+            url: 'tag', // Add game URL here
         },
         {
             title: 'Retro Bowl',
